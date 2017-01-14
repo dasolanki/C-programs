@@ -1,0 +1,45 @@
+/*
+ *WAP to find the location of the element present in the array
+ */
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int binary(int [],int,int);
+void main()
+{
+int *arr;
+int i,n,k,index;
+clrscr();
+printf("enter the number of elements in the array arr:\n");
+scanf("%d",&n);
+arr=(int*) malloc(sizeof(int));
+printf("\n enter the %d elements of the array arr in sorted format:\n",n);
+for(i=0;i<n;i++)
+scanf("%d",&arr[i]);
+printf("\n enter the element to be searched:\n");
+scanf("%d",&k);
+index=binary(arr,n,k);
+if(index==-999)
+printf("\n element %d is not present in array arr[%d]",k,n);
+else
+printf("\nelement %d is stored at index location %d in the array arr[%d]",k,index,n);
+getch();
+}
+int binary(int array[],int size,int num)
+{
+int i=0,j=size,k;
+while(i<=j)
+{
+k=(i+j)/2;
+if(array[k]==num)
+return(k);
+else if(array[k]<num)
+i=k+1;
+else
+j=k-1;
+}
+return(-999);
+}
+
+
+

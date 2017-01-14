@@ -1,0 +1,40 @@
+/*
+ *WAP to show wave pattern
+ */
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int e=2;
+int wave_heigth=4;
+int wave_length=4;
+int i,j,k;
+int n,count;
+int x=1;
+clrscr();
+for(i=0;i<wave_heigth;i++){
+for(j=wave_heigth;j<=wave_heigth+i;j++)
+{
+printf(" ");
+}
+for(count=1;count<=wave_length;count++)
+{
+for(n=(wave_heigth+wave_heigth-2);n>=x;n--)
+{
+printf(" ");
+}
+for(k=1;k<=e;k++)
+{
+if(k==1)
+printf("/");
+else if (k==e)
+printf("\\");
+else
+printf(" ");
+}}
+x+=2;
+e+=2;
+printf("\n");
+}
+getch();
+}

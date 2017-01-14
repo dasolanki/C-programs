@@ -1,0 +1,60 @@
+/*
+ * WAP to multiply two 3x3 matrix
+ */
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int i,j,k,A[3][3],B[3][3],C[3][3];
+clrscr();
+printf("enter the 3 x 3 matrix a :");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("A[%d][%d]=",i,j);
+scanf("%d",&A[i][j]);
+}
+}
+printf("enter the 3 x 3 matrix b:\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+printf("B[%d][%d]=",i,j);
+scanf("%d",&B[i][j]);
+}
+}
+printf("\n the enter matrices are: \n");
+for(i=0;i<3;i++)
+{
+printf("\n");
+for(j=0;j<3;j++)
+{
+printf("%d\t",A[i][j]);
+}
+printf("\t\t");
+for(j=0;j<3;j++)
+{
+printf("%d\t",B[i][j]);
+}
+}
+for(i=0;i<3;i++)
+for(j=0;j<3;j++)
+{
+C[i][j]=0;
+for(k=0;k<3;k++)
+C[i][j]=C[i][j]+A[i][j]*B[k][j];
+}
+printf("\n\n the product of the two matrices A x B is shown below:\n");
+for(i=0;i<3;i++)
+{
+printf("\n");
+for(j=0;j<3;j++)
+{
+printf("%d\t",	C[i][j]);
+}
+}
+getch();
+}
+

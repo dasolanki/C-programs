@@ -1,0 +1,37 @@
+/*
+ *WAP to convert binary to hexadecimal
+ */
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int hexadecimal[1000],dec=0;
+long int binary;
+int i=1,j,rem;
+printf("enter a binary number:");
+scanf("%ld",&binary);
+while(binary>0)
+{
+rem=binary %2;
+dec=dec + (rem*i);
+binary=binary/10;
+i=i*2;
+}
+i=0;
+while(dec!=0)
+{
+hexadecimal [i]=dec%16;
+dec=dec/16;
+i++;
+}
+printf("hexadecimal value");
+for(j=i-1;j>=0;j--)
+{
+if(hexadecimal[j]>9)
+printf("%c",hexadecimal[j]+55);
+else
+printf("%d",hexadecimal[j]);
+}
+getch();
+}
